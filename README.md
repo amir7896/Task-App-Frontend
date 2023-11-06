@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+## Task Management App Frontend Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+Before running the frontend , make sure to install the required dependencies. You can do this using the following command:
 
-In the project directory, you can run:
+```bash
+npm install
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. [Create a Task](#create-a-task)
+2. [Get Tasks](#get-tasks)
+3. [Get Single Task](#get-single-task)
+4. [Update Task](#update-task)
+5. [Update Task Status](#update-task-status)
+6. [Delete Task](#delete-task)
+7. [filter Task](#filter-task)
 
-### `npm test`
+## 1. Create a Task
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Instructions**: Click on Create New Task Button for create new task.
+- **Description**: Create a new task.
+- **Request Body**:
+  - `title` (string): The title of the task.
+  - `description` (string): The description of the task.
+  - `isComplete` (boolean): (Optional) Indicates whether the task is complete.
+- **Response**:
+  - `success` (boolean): `true` if the task was created successfully.
+  - `message` (string): A success message.
 
-### `npm run build`
+## 2.Filter Task
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Instructions**: For filter task click on filter button and select status and click on Apply Filter Button.
+- **Description**: Filter task base on complete and un complete.
+- **Request Body**:
+  - `isComplete` (boolean): (Filter) Select from option for complete and un complete.
+- **Response**:
+  - `success` (boolean): `true` if the task was found.
+  - `data` (object): The task object base on filter.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Update Task
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Instructions**: Click on update icon button for update task.
+- **Description**: Update an existing task by its ID.
+- **Request Body**:
+  - `title` (string): The updated title of the task.
+  - `description` (string): The updated description of the task.
+  - `isComplete` (boolean): The updated completion status of the task.
+- **Response**:
+  - `success` (boolean): `true` if the task was updated successfully.
+  - `message` (string): A success message.
 
-### `npm run eject`
+## 4. Update Task Status
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Instructions**: Click on checkbox for update task status.
+- **Description**: Update an existing task by its ID.
+- **Request Body**:
+  - `isComplete` (boolean): The updated completion status of the task.
+- **Response**:
+  - `success` (boolean): `true` if the task status updated successfully.
+  - `message` (string): A success message.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 5. Delete Task
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Instructions** Click on delete icon for delete task.
+- **Description**: Delete a task by its ID.
+- **Response**:
+  - `success` (boolean): `true` if the task was deleted successfully.
+  - `message` (string): A success message.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 6. View Single Task
 
-## Learn More
+- **Instructions**  Click on view icon for view single task.:
+- **Description**: Will show the all detail of single task.
+- **Response**:
+  - `success` (boolean): `true` if the task was found.
+  - `data` (object): The task object.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## 7. Toggle Mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Instructions**  For toggle app in dark or light mode click on the switch .
+- **Description**: Change the app mode to light and dark mode.
+```
